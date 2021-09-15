@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="input"><input id="input"></label>
+<button onclick="display()">ClickMe</button>
+<p id="result"></p>
+<script>
+    function display() {
+        //tính chu vi, diện tích hình vuông có độ dài cạnh nhập ở trên
+        let edgeSquare = document.getElementById("input").value
+        let perimeterSquare = edgeSquare * 4
+        let areaSquare = edgeSquare * edgeSquare
+        document.getElementById("result").innerText = "Chu vi hình vuông là: " + perimeterSquare +
+            "; diện tích hình vuông là: " + areaSquare
+    }
+
+</script>
+</body>
+</html>

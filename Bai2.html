@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+  //Câu lệnh để nhập giá trị thông qua hộp thoại
+  let num = prompt("Nhập vào 1 số bất kỳ: ")
+  let number = parseInt(num)
+  let square = number*number
+  //hộp thoại
+  alert("Bình phương của " + number +" là: " + square)
+  //hiển thị lên màn hình vs write
+  document.write("Bình phương của " + number +" là: " + square)
+  //hiển thị ở console
+  console.log("Bình phương của " + number +" là: " + square)
+  //thay đổi giá trị của thẻ HTML được chỉ đén bởi ID
+  document.getElementById("result").innerText = "Bình phương của " + number +" là: " + square
+  document.getElementById("result").innerHTML = "<h1 style='color: red'>" + "Bình phương của " + number +" là: " + square + "</h1>"
+</script>
+</body>
+</html>

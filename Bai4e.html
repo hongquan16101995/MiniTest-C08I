@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="numberA"><input id="numberA"></label>
+<label for="numberB"><input id="numberB"></label>
+<label for="numberC"><input id="numberC"></label>
+<input type="button" onclick="display()" value="ClickMe">
+<p id="result"></p>
+<script>
+    function display() {
+        let edgeA = parseInt(document.getElementById("numberA").value)
+        let edgeB = parseInt(document.getElementById("numberB").value)
+        let edgeC = parseInt(document.getElementById("numberC").value)
+        let conditionTriangle1 = (edgeA + edgeB) > edgeC && (edgeB + edgeC) > edgeA && (edgeA + edgeC) > edgeB
+        let conditionTriangle2 = (edgeA === edgeB) || (edgeA === edgeC) || (edgeB === edgeC)
+        let conditionTriangle3 = (edgeA === edgeB) && (edgeB === edgeC)
+        let conditionTriangle4 = (edgeA ** 2 + edgeB ** 2 === edgeC ** 2) || (edgeA ** 2 + edgeC ** 2 === edgeB ** 2) || (edgeC ** 2 + edgeB ** 2 === edgeA ** 2)
+        if (conditionTriangle1) {
+            if (conditionTriangle2) {
+                if (conditionTriangle3) {
+                    document.getElementById("result").innerText = "Đây là hình tam giác đều"
+                } else {
+                    document.getElementById("result").innerText = "Đây là hình tam giác cân"
+                }
+            } else if (conditionTriangle4) {
+                document.getElementById("result").innerText = "Đây là hình tam giác vuông"
+            } else {
+                document.getElementById("result").innerText = "Đây là hình tam giác"
+            }
+        } else {
+            document.getElementById("result").innerText = "Đây không phải hình tam giác"
+        }
+
+       /* if (conditionTriangle1) {
+            document.getElementById("result").innerText = "Đây là hình tam giác"
+            if (conditionTriangle2) {
+                document.getElementById("result").innerText = "Đây là hình tam giác cân"
+                if (conditionTriangle3) {
+                    document.getElementById("result").innerText = "Đây là hình tam giác đều"
+                }
+            }
+            if (conditionTriangle4) {
+                document.getElementById("result").innerText = "Đây là hình tam giác vuông"
+            }
+        } else {
+            document.getElementById("result").innerText = "Đây không là hình tam giác"
+        }*/
+    }
+
+</script>
+</body>
+</html>
